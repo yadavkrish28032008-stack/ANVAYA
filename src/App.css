@@ -2062,3 +2062,351 @@
     gap: 8px;
   }
 }
+
+
+/* ==================================================
+   ENHANCED MOBILE OPTIMIZATION FOR DASHBOARD
+   ================================================== */
+
+/* Extra Small Phones (320px - 375px) */
+@media (max-width: 375px) {
+  .command-container {
+    padding: 8px;
+    min-height: 100vh;
+  }
+
+  .command-header {
+    padding: 8px;
+    gap: 4px;
+  }
+
+  .header-title {
+    font-size: 14px;
+  }
+
+  .header-subtitle {
+    font-size: 10px;
+  }
+
+  .command-body {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-width: none;
+    min-height: auto;
+    margin-bottom: 8px;
+    padding: 8px;
+    max-height: auto;
+    overflow: visible;
+  }
+
+  .sidebar-section {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  .sidebar-title {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .nav-item {
+    padding: 8px;
+    font-size: 11px;
+  }
+
+  .main-content {
+    flex: 1;
+    padding: 8px;
+  }
+
+  .dashboard-section {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .editorial-metric-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .metric-card {
+    padding: 12px;
+  }
+
+  .metric-value {
+    font-size: 18px;
+  }
+
+  .metric-label {
+    font-size: 10px;
+  }
+
+  .alert-item {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  .alert-title {
+    font-size: 11px;
+  }
+
+  .alert-desc {
+    font-size: 9px;
+  }
+
+  .timeline-item {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  .timeline-time {
+    font-size: 9px;
+  }
+
+  .timeline-text {
+    font-size: 10px;
+  }
+
+  .button {
+    padding: 8px 12px;
+    font-size: 11px;
+    min-height: 36px;
+  }
+}
+
+/* Small Phones (376px - 414px) */
+@media (min-width: 376px) and (max-width: 414px) {
+  .command-body {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-height: none;
+    margin-bottom: 12px;
+  }
+
+  .editorial-metric-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .metric-value {
+    font-size: 20px;
+  }
+}
+
+/* Tablet adjustments (415px - 767px) */
+@media (min-width: 415px) and (max-width: 767px) {
+  .command-container {
+    padding: 12px;
+  }
+
+  .command-body {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-height: none;
+    margin-bottom: 12px;
+    overflow: auto;
+  }
+
+  .editorial-metric-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .main-content {
+    padding: 12px;
+  }
+
+  .dashboard-section {
+    padding: 12px;
+  }
+}
+
+/* Prevent horizontal scrolling on all devices */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure responsive tables */
+table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  table thead {
+    display: none;
+  }
+
+  table tbody,
+  table tr,
+  table td {
+    display: block;
+    width: 100%;
+  }
+
+  table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 8px;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4px;
+  }
+}
+
+/* Image responsiveness */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Button tap area minimum */
+button,
+a,
+input[type="button"],
+input[type="submit"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@media (max-width: 480px) {
+  button,
+  a,
+  input[type="button"],
+  input[type="submit"] {
+    min-height: 40px;
+  }
+}
+
+/* Fix overflow issues */
+.container,
+[class*="wrapper"],
+[class*="container"] {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure readable text */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  p {
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+}
+
+/* Very small screen optimization */
+@media (max-width: 320px) {
+  .command-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-title {
+    font-size: 12px;
+  }
+
+  .nav-item {
+    padding: 6px;
+    font-size: 10px;
+  }
+
+  .metric-value {
+    font-size: 16px;
+  }
+
+  .dashboard-section {
+    padding: 8px;
+  }
+}
+
+/* Ensure no overlapping on small screens */
+@media (max-width: 600px) {
+  .overlay,
+  .modal,
+  [role="dialog"] {
+    max-width: 95vw;
+    max-height: 95vh;
+    margin: auto;
+    padding: 12px;
+  }
+
+  .overlay-content,
+  .modal-content {
+    overflow-y: auto;
+    max-height: 90vh;
+  }
+}
+
+/* Grid responsive */
+@media (max-width: 768px) {
+  [class*="grid"],
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  [class*="flex"],
+  .flex {
+    flex-direction: column;
+  }
+}
+
+/* Touch-friendly spacing */
+@media (hover: none) and (pointer: coarse) {
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    padding: 12px;
+    margin: 6px 0;
+  }
+
+  .nav-item {
+    padding: 12px 8px;
+  }
+}
