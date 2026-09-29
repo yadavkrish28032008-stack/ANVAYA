@@ -4,6 +4,7 @@ import { LandingNavbar } from './LandingNavbar';
 import { HeroSection } from './HeroSection';
 import {
   ProjectSnapshotSection,
+  ProjectInfoBar,
   ProblemSection,
   ApproachSection,
   AssetNodeSection,
@@ -33,6 +34,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onOpenDashboard }) => 
       <main className="landing-main-content">
         {/* Section 01: Hero */}
         <HeroSection onOpenDashboard={onOpenDashboard} />
+
+        {/* Project Information Bar */}
+        <ProjectInfoBar />
 
         {/* Section 02: Project Snapshot */}
         <ProjectSnapshotSection />

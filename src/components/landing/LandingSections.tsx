@@ -36,9 +36,6 @@ interface SectionProps {
   onOpenDashboard: () => void;
 }
 
-/* ==================================================
-   SECTION 02 – PROJECT SNAPSHOT
-   ================================================== */
 export const ProjectSnapshotSection: React.FC = () => {
   const snapshotItems = [
     {
@@ -80,6 +77,49 @@ export const ProjectSnapshotSection: React.FC = () => {
     </section>
   );
 };
+
+/* ==================================================
+   PROJECT INFORMATION BAR
+   ================================================== */
+export const ProjectInfoBar: React.FC = () => {
+  return (
+    <section className="project-info-section" aria-label="Project Information">
+      <div className="landing-content-container">
+        <div className="project-info-bar-wrapper">
+          <div className="project-info-card">
+            <div className="project-info-item">
+              <span className="project-info-label font-mono">Problem Statement ID</span>
+              <span className="project-info-value font-mono">SIH26211</span>
+            </div>
+            <div className="project-info-divider" />
+            <div className="project-info-item">
+              <span className="project-info-label font-mono">Team ID</span>
+              <span className="project-info-value font-mono">148124</span>
+            </div>
+            <div className="project-info-divider" />
+            <div className="project-info-item">
+              <span className="project-info-label font-mono">PS Category</span>
+              <span className="project-info-value font-mono">Hardware</span>
+            </div>
+            <div className="project-info-divider" />
+            <div className="project-info-item">
+              <span className="project-info-label font-mono">Theme</span>
+              <span className="project-info-value font-mono">Blockchain & Cybersecurity</span>
+            </div>
+            <div className="project-info-divider" />
+            <div className="project-info-item">
+              <span className="project-info-label font-mono">Team</span>
+              <span className="project-info-value font-mono">ROOT LOGIC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ==================================================
+   SECTION 02 – PROJECT SNAPSHOT
 
 /* ==================================================
    SECTION 03 – THE PROBLEM
