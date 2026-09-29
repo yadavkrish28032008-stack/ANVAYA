@@ -2659,6 +2659,7 @@
   }
 }
 
+@media (max-width: 600px) {
   .snapshot-grid {
     grid-template-columns: 1fr;
   }
