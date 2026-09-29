@@ -1,0 +1,296 @@
+import type {
+  DemoAsset,
+  OverviewMetrics,
+  RecentEvent,
+  AssetConditionData,
+  TrustStatusData,
+  AlertSummaryMetrics,
+  DemoAlertItem,
+  SectorMetric,
+} from '../types';
+
+export const MOCK_OVERVIEW_METRICS: OverviewMetrics = {
+  activeAssets: 128,
+  normalAssets: 118,
+  tamperAlerts: 3,
+  temperatureAlerts: 7,
+};
+
+export const MOCK_DEMO_ASSETS: DemoAsset[] = [
+  {
+    id: 'ANV-MR-014',
+    sector: 'Marine',
+    assetType: 'Cargo Container',
+    status: 'Normal',
+    identity: 'Verified',
+    locationRegion: 'Bay of Bengal',
+    locationDetail: 'Ennore Offshore',
+    locationName: 'Bay of Bengal / Ennore Offshore',
+    locationStatus: 'Simulated',
+    lastUpdate: '10:36 AM',
+    mapX: 74,
+    mapY: 62,
+    temperature: 24.6,
+    tempThreshold: 25.0,
+    vibration: 'Normal',
+    tamper: 'Secure',
+    overallCondition: 'Normal',
+    recentActivity: [
+      {
+        time: '10:36 AM',
+        description: 'Location updated',
+        status: 'Simulated',
+      },
+      {
+        time: '10:32 AM',
+        description: 'Condition checked',
+        status: 'Normal',
+      },
+      {
+        time: '10:28 AM',
+        description: 'Asset identity verified',
+        status: 'Verified',
+      },
+      {
+        time: '10:21 AM',
+        description: 'Custody record updated',
+        status: 'Recorded',
+      },
+    ],
+  },
+  {
+    id: 'ANV-RD-021',
+    sector: 'Road',
+    assetType: 'Freight Truck Unit',
+    status: 'Normal',
+    identity: 'Verified',
+    locationRegion: 'Chennai Logistics Hub',
+    locationDetail: 'Sriperumbudur Depot',
+    locationName: 'Chennai Hub / Sriperumbudur',
+    locationStatus: 'Simulated',
+    lastUpdate: '10:34 AM',
+    mapX: 68,
+    mapY: 70,
+    temperature: 24.2,
+    tempThreshold: 25.0,
+    vibration: 'Normal',
+    tamper: 'Secure',
+    overallCondition: 'Normal',
+    recentActivity: [
+      {
+        time: '10:34 AM',
+        description: 'Location updated',
+        status: 'Simulated',
+      },
+      {
+        time: '10:30 AM',
+        description: 'Condition checked',
+        status: 'Normal',
+      },
+      {
+        time: '10:25 AM',
+        description: 'Asset identity verified',
+        status: 'Verified',
+      },
+      {
+        time: '10:18 AM',
+        description: 'Custody record updated',
+        status: 'Recorded',
+      },
+    ],
+  },
+  {
+    id: 'ANV-RL-008',
+    sector: 'Railway',
+    assetType: 'Freight Rail Wagon',
+    status: 'Normal',
+    identity: 'Verified',
+    locationRegion: 'Central Rail Corridor',
+    locationDetail: 'Nagpur Freight Yard',
+    locationName: 'Nagpur Central Freight Yard',
+    locationStatus: 'Simulated',
+    lastUpdate: '10:32 AM',
+    mapX: 52,
+    mapY: 45,
+    temperature: 23.8,
+    tempThreshold: 25.0,
+    vibration: 'Normal',
+    tamper: 'Secure',
+    overallCondition: 'Normal',
+    recentActivity: [
+      {
+        time: '10:32 AM',
+        description: 'Location updated',
+        status: 'Simulated',
+      },
+      {
+        time: '10:26 AM',
+        description: 'Condition checked',
+        status: 'Normal',
+      },
+      {
+        time: '10:20 AM',
+        description: 'Asset identity verified',
+        status: 'Verified',
+      },
+      {
+        time: '10:14 AM',
+        description: 'Custody record updated',
+        status: 'Recorded',
+      },
+    ],
+  },
+  {
+    id: 'ANV-AW-005',
+    sector: 'Airway',
+    assetType: 'Air Cargo Express Pallet',
+    status: 'Normal',
+    identity: 'Verified',
+    locationRegion: 'Northern Air Corridor',
+    locationDetail: 'Delhi IGI Cargo Gateway',
+    locationName: 'Delhi Air Cargo Terminal',
+    locationStatus: 'Simulated',
+    lastUpdate: '10:28 AM',
+    mapX: 38,
+    mapY: 24,
+    temperature: 22.4,
+    tempThreshold: 25.0,
+    vibration: 'Normal',
+    tamper: 'Secure',
+    overallCondition: 'Normal',
+    recentActivity: [
+      {
+        time: '10:28 AM',
+        description: 'Location updated',
+        status: 'Simulated',
+      },
+      {
+        time: '10:22 AM',
+        description: 'Condition checked',
+        status: 'Normal',
+      },
+      {
+        time: '10:16 AM',
+        description: 'Asset identity verified',
+        status: 'Verified',
+      },
+      {
+        time: '10:10 AM',
+        description: 'Custody record updated',
+        status: 'Recorded',
+      },
+    ],
+  },
+];
+
+export const MOCK_ASSET_CONDITION: AssetConditionData = {
+  temperature: 24.6,
+  tempThreshold: 25.0,
+  vibration: 'Normal',
+  tamper: 'Secure',
+  identity: 'Verified',
+};
+
+export const MOCK_TRUST_STATUS: TrustStatusData = {
+  identityVerified: true,
+  eventRecordVerified: true,
+  dataIntegrityVerified: true,
+  statusLabel: 'Verified – Demo',
+};
+
+export const MOCK_TRANSPORT_NETWORK: SectorMetric[] = [
+  { sector: 'Road', count: 42 },
+  { sector: 'Railway', count: 36 },
+  { sector: 'Marine', count: 28 },
+  { sector: 'Airway', count: 18 },
+];
+
+export const MOCK_RECENT_EVENTS: RecentEvent[] = [
+  {
+    id: 'EVT-1',
+    time: '10:36 AM',
+    description: 'Location updated',
+    assetId: 'ANV-MR-014',
+    status: 'Simulated',
+  },
+  {
+    id: 'EVT-2',
+    time: '10:32 AM',
+    description: 'Condition checked',
+    assetId: 'ANV-RL-008',
+    status: 'Normal',
+  },
+  {
+    id: 'EVT-3',
+    time: '10:28 AM',
+    description: 'Temperature threshold exceeded',
+    assetId: 'ANV-MR-014',
+    status: 'Alert',
+  },
+  {
+    id: 'EVT-4',
+    time: '10:21 AM',
+    description: 'Tamper event detected',
+    assetId: 'ANV-AW-005',
+    status: 'Alert',
+  },
+];
+
+export const MOCK_ALERT_SUMMARY_METRICS: AlertSummaryMetrics = {
+  temperatureAlerts: 7,
+  tamperAlerts: 3,
+  totalAlerts: 10,
+};
+
+export const MOCK_RECENT_ALERTS: DemoAlertItem[] = [
+  {
+    id: 'ALT-01',
+    time: '10:28 AM',
+    assetId: 'ANV-MR-014',
+    alertType: 'Temperature',
+    status: 'Threshold Exceeded',
+    recordedValue: '27.8°C',
+    demoThreshold: '25°C',
+    eventDescription: 'Temperature threshold exceeded',
+    action: 'Inspection Required',
+    source: 'Simulated Sensor Data',
+    recordStatus: 'Demo',
+  },
+  {
+    id: 'ALT-02',
+    time: '10:21 AM',
+    assetId: 'ANV-AW-005',
+    alertType: 'Tamper',
+    status: 'Detected',
+    sealStatus: 'Open',
+    eventDescription: 'Simulated enclosure/seal event',
+    action: 'Inspection Required',
+    source: 'Simulated Sensor Data',
+    recordStatus: 'Demo Alert',
+  },
+  {
+    id: 'ALT-03',
+    time: '10:12 AM',
+    assetId: 'ANV-RD-021',
+    alertType: 'Temperature',
+    status: 'Threshold Exceeded',
+    recordedValue: '26.5°C',
+    demoThreshold: '25°C',
+    eventDescription: 'Temperature threshold exceeded',
+    action: 'Inspection Required',
+    source: 'Simulated Sensor Data',
+    recordStatus: 'Demo',
+  },
+  {
+    id: 'ALT-04',
+    time: '09:56 AM',
+    assetId: 'ANV-RL-008',
+    alertType: 'Tamper',
+    status: 'Detected',
+    sealStatus: 'Open',
+    eventDescription: 'Simulated enclosure/seal event',
+    action: 'Inspection Required',
+    source: 'Simulated Sensor Data',
+    recordStatus: 'Demo Alert',
+  },
+];
